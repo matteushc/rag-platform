@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RAG Data Platform</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <main class="app">
+      <section class="panel">
+        <div>
+          <p class="eyebrow">RAG Data Platform</p>
+          <h1>Upload, index, and ask your documents</h1>
+        </div>
+
+        <form id="upload-form" class="stack">
+          <label for="file">Document</label>
+          <input id="file" name="file" type="file" accept=".txt,.md,.pdf,.csv,.json" />
+          <button type="submit">Upload and index</button>
+        </form>
+
+        <form id="search-form" class="stack">
+          <label for="query">Question</label>
+          <textarea id="query" name="query" rows="4" placeholder="Ask something from your indexed documents"></textarea>
+          <div class="inline">
+            <label class="check">
+              <input id="generate-answer" type="checkbox" checked />
+              Generate answer
+            </label>
+            <button type="submit">Search</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="results">
+        <div class="status" id="status">Ready</div>
+        <article id="answer" class="answer hidden"></article>
+        <div id="matches" class="matches"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
